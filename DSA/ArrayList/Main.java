@@ -63,5 +63,69 @@ public class Main {
 
         System.out.println("After add more cars at index: " + cars);
 
+        cars.clear();
+        System.out.println("after clear: " + cars);
+
+        cars.add("Tesla");
+        cars.add("Lucid");
+        cars.add("BYD");
+        cars.add("Honda");
+        System.out.println("Cars list: " + cars);
+
+        // classic for loop
+        System.out.println("\n1) Classic for loop:");
+        for (int i = 0; i < cars.size(); i++) {
+            System.out.println("index " + i + ": " + cars.get(i));
+        }
+
+        // for each loop
+        System.out.println("\n2) Enhanced for loop:");
+        for (String car : cars) {
+            System.out.println(car);
+        }
+
+        // iterator
+        System.out.println("\n3) Iterator:");
+        Iterator<String> it = cars.iterator();
+        while (it.hasNext()) {
+            String car = it.next();
+            System.out.println(car);
+            if (car.equals("Honda")) {
+                it.remove();
+            }
+        }
+        System.out.println("After iterator removed Honda: " + cars);
+
+        // forEach method with Lambda
+        System.out.println("\n4) forEach method with Lambda:");
+        cars.forEach(c -> System.out.println(c));
+
+        // Search in ArrayList
+
+        // contains() method
+        System.out.println("\n1) contains() → true/false");
+        System.out.println("Contains Tesla? " + cars.contains("Tesla"));
+        System.out.println("Contains Honda? " + cars.contains("Honda"));
+
+        // indexOf() method
+        System.out.println("\n2) indexOf() → first position");
+        System.out.println("First Lucid at index: " + cars.indexOf("Lucid"));
+
+        System.out.println("\n3) lastIndexOf() → last position");
+        cars.add("Lucid");
+        System.out.println("Last Lucid at index: " + cars.lastIndexOf("Lucid"));
+
+        // isEmpty() method
+        System.out.println("\n4) isEmpty() → true/false");
+        System.out.println("Is empty? " + cars.isEmpty());
+
+        // size() method
+        System.out.println("How many cars? " + cars.size());
+        System.out.println("Cars list: " + cars);
+
+        // checking if items exist
+        System.out.println("\n5) checking if car exists");
+        System.out.println("\n5) Do we have a Bugatti in the list? " + cars.indexOf("Bugatti"));
+
     }
 }
